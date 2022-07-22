@@ -1,10 +1,8 @@
-## Installing
-```sh
-cd project_directory/
-```
+## Requirements
+Python >= 3.8
+MongoDB (using 5.0.9)
 
-then...
-
+## Instal
 * Installing virtual environment
 ```sh
 python3 -m venv bot-env
