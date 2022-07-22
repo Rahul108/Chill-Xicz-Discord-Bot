@@ -10,9 +10,9 @@ then...
 python3 -m venv bot-env
 ```
 
-* Installing library
+* Installing required packages/libraries
 ```sh
-pip install -U discord.py
+pip install -r requirements.txt
 ```
 
 * Installing dependencies
@@ -20,6 +20,10 @@ pip install -U discord.py
 sudo apt install libffi-dev libnacl-dev python3-dev
 ```
 
+* Create .env and update required fields
+```sh
+cp env.example .env
+```
 
 ## Running the project
 
