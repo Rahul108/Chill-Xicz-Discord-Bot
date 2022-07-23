@@ -3,7 +3,7 @@ Python >= 3.8
 
 MongoDB (using 5.0.9)
 
-## Instal
+## Install
 * Installing virtual environment
 ```sh
 python3 -m venv bot-env
