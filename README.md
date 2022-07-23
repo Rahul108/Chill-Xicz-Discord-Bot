@@ -3,15 +3,15 @@ Python >= 3.8
 
 MongoDB (using 5.0.9)
 
-## Install
-* Installing virtual environment
+* Install & activate virtual environment
 ```sh
-python3 -m venv bot-env
+virtualenv venv --python=python38
+source venv/bin/activate
 ```
 
 * Installing required packages/libraries
 ```sh
-pip install -r requirements.txt
+poetry install
 ```
 
 * Installing dependencies
@@ -28,10 +28,10 @@ cp env.example .env
 
 * Activate virtual environment
 ```sh
-./bot-env/Scripts/activate
+source venv/bin/activate
 ```
 
 * Run the python script
 ```sh
-python3 bot.py
+python3 main.py
 ```
