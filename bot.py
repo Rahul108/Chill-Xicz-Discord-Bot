@@ -93,9 +93,9 @@ async def cool(ctx):
         await ctx.send('No, {0.subcommand_passed} is not cool'.format(ctx))
 
 
-@aiocron.crontab('* 14,22 * * 1-7')
+@aiocron.crontab('0 14,22 * * 1-7')
 async def cornjob1():
-    channel = bot.get_channel(CHANNEL_ID)
+    channel = bot.get_channel(int(CHANNEL_ID))
     await channel.send('https://docs.google.com/spreadsheets/d/1IC3EKa-RGar6Hv7oG-ZC5fwY7-SL7QRnaigwiwx4g4s/edit?usp=sharing')
     members_list=client.chill_xicz['users'].distinct('user_id', {'mess_member':True})
     for member in members_list:
