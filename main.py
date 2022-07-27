@@ -51,7 +51,6 @@ async def on_message(message):
     else:
         await bot.process_commands(message)
 
-
 @bot.command()
 async def repeat(ctx, times: int, content='repeating...'):
     """Repeats a message multiple times."""
@@ -90,6 +89,36 @@ async def mention_all_registered_members(clx):
         res += user + ', '
     await clx.send(res)
 
+
+@bot.command()
+async def bolen_bhai(clx, *str):
+    """
+        Express what u want to say! It would be kept secret :3!!
+        
+        Share your thought: kid --bolen_bhai <your thoughts>
+        e.g: kid --bolen_bhai this is my thought!!
+
+        See random thouhts of someone: kid --bolen_bhai
+    """
+    msg = ' '.join(str)
+    await clx.message.delete()
+
+    if len(msg) == 0:
+        msg_list = client.chill_xicz['bolen_bhai'].distinct('msg')
+        msg_list_len = len(msg_list)
+        random_msg = random.randint(0, msg_list_len - 1)
+        await clx.send(f"""
+            Bhai...
+            {msg_list[random_msg]}
+        """)
+    else:
+        gg = client.chill_xicz['bolen_bhai'].insert_one({'msg': msg})
+        if gg:
+            await clx.send(f'Ok Bhai!')
+        else:
+            await clx.send(
+                f'Ektu Busy Chilam, Kheyal Kori Nai Thik Moto!! Abar Bolben Please :3'
+            )
 
 @bot.group()
 async def cool(ctx):
