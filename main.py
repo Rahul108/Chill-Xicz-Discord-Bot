@@ -2,10 +2,10 @@ import os, time
 import discord
 from discord.ext import commands
 import aiocron
-import random
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from keep_alive import keep_alive
+import secrets
 
 os.environ['TZ'] = 'Asia/Dhaka'
 time.tzset()
@@ -47,7 +47,7 @@ async def on_message(message):
         await message.channel.send(f'Hello <@{message.author.id}>')
     elif message.content.startswith('kid') and "--" not in message.content:
         await message.channel.send(
-            f'<@{message.author.id}>, {savage_replies[random.randint(0,2)]}')
+            f'<@{message.author.id}>, {savage_replies[secrets.SystemRandom().randint(0,2)]}')
     else:
         await bot.process_commands(message)
 
@@ -106,7 +106,7 @@ async def bolen_bhai(clx, *str):
     if len(msg) == 0:
         msg_list = client.chill_xicz['bolen_bhai'].distinct('msg')
         msg_list_len = len(msg_list)
-        random_msg = random.randint(0, msg_list_len - 1)
+        random_msg = secrets.SystemRandom().randint(0, msg_list_len - 1)
         await clx.send(f"""
             Bhai...
             {msg_list[random_msg]}
