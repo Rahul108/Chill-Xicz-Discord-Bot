@@ -84,7 +84,7 @@ async def register(ctx, user_id, mess_member=False):
 async def mention_all_registered_members(clx):
     "Mention all registerd members"
     users = client.chill_xicz['users'].distinct('user_id')
-    res = f'Hello '
+    res = 'Hello '
     for user in users:
         res += user + ', '
     await clx.send(res)
@@ -114,10 +114,10 @@ async def bolen_bhai(clx, *str):
     else:
         gg = client.chill_xicz['bolen_bhai'].insert_one({'msg': msg})
         if gg:
-            await clx.send(f'Ok Bhai!')
+            await clx.send('Ok Bhai!')
         else:
             await clx.send(
-                f'Ektu Busy Chilam, Kheyal Kori Nai Thik Moto!! Abar Bolben Please :3'
+                'Ektu Busy Chilam, Kheyal Kori Nai Thik Moto!! Abar Bolben Please :3'
             )
 
 @bot.group()
